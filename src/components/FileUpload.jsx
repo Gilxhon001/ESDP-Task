@@ -14,7 +14,16 @@ function FileUpload({ setFileData }) {
 
     return (
         <div>
-            <input type="file" accept=".txt" onChange={handleFileUpload} />
+                <input className="block w-full text-sm text-slate-500 bg-gray-50 rounded-lg
+                                  file:mr-4 file:py-2 file:px-4
+                                  file:rounded-full file:border-0
+                                  file:text-sm file:font-semibold
+                                  file:bg-blue-50 file:text-blue-700
+                                  hover:file:bg-blue-100"
+                       type="file"
+                       accept=".txt"
+                       onChange={handleFileUpload}
+                />
         </div>
     );
 }

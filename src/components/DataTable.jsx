@@ -37,18 +37,24 @@ function DataTable({ data, linesPerPage }) {
 
     return (
         <>
-            <input
-                type="text"
-                placeholder="Search"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <div ref={tableRef} style={{ height: '400px', overflowY: 'scroll' }}>
+            <div>
+                <input type="text"
+                       id="search-input"
+                       placeholder="Search for anything"
+                       className="focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-sky-500
+                                  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                  block w-96 p-2.5"
+                       value={searchTerm}
+                       onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
+
+            <div ref={tableRef} style={{ overflowY: 'scroll' }} className="rounded-lg p-5 h-full flex justify-center items-start bg-gray-50">
                 <table>
                     <tbody>
                     {filteredData.map((line, index) => (
-                        <tr key={index}>
-                            <td>{line}</td>
+                        <tr key={index} className="border-solid border-2 border-sky-500">
+                            <td className="p-2 whitespace-pre">{index}) {line}</td>
                         </tr>
                     ))}
                     </tbody>

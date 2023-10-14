@@ -8,9 +8,9 @@ function App() {
     const linesPerPage = 20;
 
     return (
-        <div className="App">
-            <FileUpload setFileData={setFileData} />
-            <DataTable data={fileData} currentPage={currentPage} linesPerPage={linesPerPage} />
+        <div className="flex flex-col items-center gap-5 bg-gradient-to-r from-cyan-500 to-blue-500 h-screen p-5">
+                <FileUpload setFileData={setFileData} />
+                <DataTable data={fileData} currentPage={currentPage} linesPerPage={linesPerPage} />
         </div>
     );
 }
